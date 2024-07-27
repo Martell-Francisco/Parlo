@@ -1,0 +1,177 @@
+.listContainer{
+    display:flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+}   
+.folderContainer{
+    display:flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.folder{
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    
+    position: relative;
+    text-align: center;
+}
+.h2{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  font-weight: 600;
+  color:aliceblue;
+}
+.listItem{
+    width: 250px;
+    height: 312px;
+    margin: 10px;
+    display: block;
+}
+.imgIcon{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(83, 255, 198);
+    position: relative;
+}
+.imgIconList{
+    width: 250px;
+    height: 250px;
+    background-color: transparent;
+    position: relative;
+}
+.h1{
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    background-color: whitesmoke;
+    color: black;
+}
+.folder img{
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.listItem img{
+    object-fit: contain;
+    flex: 5;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.speak{
+    width: 100%;
+    height: 100%;
+}
+/* Edit Mode CSS */
+.editModeFolderContainer{
+    display:flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    min-width: 30vw;
+    justify-content: space-evenly;
+}
+.editModeh2{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8vw;
+  font-weight: 600;
+  color:aliceblue;
+  word-wrap: break-word;
+  
+}
+
+.editModeFolder{
+    width: 150px;
+    height: 150px;
+    margin-left: 10%;
+    margin-right: 10%;
+    position: relative;
+    text-align: center;
+    
+}
+
+.editModeFolder img{
+    object-fit: contain;
+
+    max-width: 100%;
+    max-height: 100%;
+}
+.editModeContainer{
+display: flex;
+flex-direction: row;
+width: 100vw;
+}
+.editModeGroup{
+    display: flex;
+    flex-wrap: wrap;
+    border-right: 1px solid black;
+}
+.editModeSearch{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Edit Mode List */
+
+.editModeListContainer{
+    display:flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    min-width: 30vw;
+    justify-content: space-evenly;
+}
+
+.editModeListItem{
+    width: 160px;
+    height: 200px;
+    margin: 10px;
+    display: block;
+}
+.editModeImgIconList{
+
+    width: 160px;
+    height: 160px;
+    background-color: transparent;
+    position: relative;
+
+}
+.editModeListItem img{
+    object-fit: contain;
+    flex: 5;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.editModeList img{
+    object-fit: contain;
+
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.editModeSearch{
+    margin-left: 5%;
+    margin-right: 5%;
+}
