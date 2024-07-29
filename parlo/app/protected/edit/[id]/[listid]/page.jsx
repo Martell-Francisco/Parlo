@@ -68,7 +68,7 @@ return (
             ))}
         </div>
           <div className={styles.editModeSearch}>
-                  <Search/>
+                  <Search id={params.listid}/>
           </div>
         </div>
         

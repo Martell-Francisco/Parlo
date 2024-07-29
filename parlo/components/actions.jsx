@@ -40,18 +40,19 @@ export async function addList(formData) {
     revalidatePath('/')
   }
 
-  export async function search(formData) {
+  export async function LinkItems(formData) {
     const supabase = createClient()
     
     const data = {
-        listName: formData.get('listName')
+        listid: formData.get('listid'),
+        itemid: formData.get('itemid')
       }
-
-    const { addData, error } = await supabase
-    .from('list')
-    .insert([
-    { name: data.listName, group_id: data.group_id },
-    ])
+      console.log("ListID: " + data.listid + "    ItemID: " + data.itemid)
+    
+    const { error } = await supabase
+    .from('list_item')
+    .upsert({ itemid: data.itemid, listid: data.listid })
     .select()
+            
     revalidatePath('/')
   }
