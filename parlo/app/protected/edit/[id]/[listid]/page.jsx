@@ -2,7 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import styles from "../../../protected.module.css"
 import { notFound } from "next/navigation";
 import AuthButton from "@/components/AuthButton";
-import Speak from "@/components/Speak";
+import Speak from "../../../../../components/speak";
 import BackButton from "@/components/backButton";
 import Search from "@/components/search";
 import DeleteItem from "@/components/DeleteItem";
