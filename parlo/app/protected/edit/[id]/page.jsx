@@ -7,6 +7,8 @@ import AuthButton from "@/components/AuthButton";
 import BackButton from "@/components/backButton";
 import CreateFolder from "@/components/createFolder";
 import CreateList from "@/components/createList";
+import DeleteList from "@/components/DeleteList";
+import DeleteFolder from "@/components/DeleteFolder";
 
 
 
@@ -18,6 +20,7 @@ async function getGroup(id){
     .from('group')
     .select('*')
     .eq("parentid", id)
+    .neq("group_id",id)
 
     if(!group){
         
@@ -62,8 +65,8 @@ return (
           <div className={styles.editModeGroup}>
           <div className={styles.editModeFolderContainer}>
             {group.map((groups)=>(
-                
-                    <Link key={groups.group_id}  href={`/protected/edit/${groups.group_id}`}>
+                <div key={groups.group_id}  className={styles.editModeMain}>
+                  <Link  href={`/protected/edit/${groups.group_id}`}>
                     <div className={styles.editModeFolder}>
                         
                         {/* <img src="https://ycyphowutdosebffyzaq.supabase.co/storage/v1/object/public/perlo/man_eating_food.png?t=2024-07-23T16%3A18%3A59.374Z" alt="" /> */}
@@ -72,21 +75,27 @@ return (
                     </div>
        
                     {/* <Group groupid={groups.id}/> */}
-                    </Link>
+                    
+                  </Link>
+                  <DeleteFolder id = {groups.group_id}/>
+                </div>
+                    
             ))}
             </div>
              <div className={styles.editModeFolderContainer}>
             {list.map((lists)=>(
-                
-                    <Link key={lists.id}  href={`/protected/edit/${params.id}/${lists.id}`}>
-                        {console.log("list ID: " + lists.id)}
+                <div key={lists.id} className={styles.editModeMain}>
+                  <Link  href={`/protected/edit/${params.id}/${lists.id}`}>
                     <div className={styles.editModeFolder}>
                         <img alt="svgImg" src="/list.svg"/>
                         <h2 className={styles.editModeh2}>{lists.name}</h2>
                     </div>
-       
-                    {/* <Group groupid={groups.id}/> */}
+                   
                     </Link>
+                    <DeleteList id ={lists.id}/>
+       
+                </div>
+                    
             ))}
           </div>
           </div>
@@ -96,9 +105,6 @@ return (
           </div>
         </div>
        
-        
-        <p>Testing Owner Stuff</p>
-
         <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
         <p>
           Powered by{" "}
@@ -108,7 +114,7 @@ return (
             className="font-bold hover:underline"
             rel="noreferrer"
           >
-            Supabase
+            Friendship
           </a>
         </p>
       </footer>

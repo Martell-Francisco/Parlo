@@ -17,6 +17,7 @@ async function getGroup(id){
     .from('group')
     .select('*')
     .eq("parentid", id)
+    .neq("group_id",id)
 
     if(!group){
         

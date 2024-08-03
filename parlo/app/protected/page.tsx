@@ -2,6 +2,7 @@ import AuthButton from "@/components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import Link from "next/link"
+import styles from "./protected.module.css"
 
 export default async function ProtectedPage() {
   const supabase = createClient();
@@ -31,8 +32,18 @@ const groupid = {}
           </div>
         </nav>
       </div>
-      <Link href={`protected/${owner?.at(0).root_group_id}`}>Link </Link>
-      <Link href={`protected/edit/${owner?.at(0).root_group_id}`}>Enter Edit Mode</Link>
+      <div className={styles.linkContainer}>
+        <Link href={`protected/${owner?.at(0).root_group_id}`} >
+          <div className={styles.mainLink}>
+            <h2>Viewing Mode</h2>
+          </div>
+        </Link>
+        <Link href={`protected/edit/${owner?.at(0).root_group_id}`}>
+        <div className={styles.mainLink}>
+        <h2>Edit Mode</h2>
+        </div>
+        </Link>
+      </div>
 
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
         <p>
@@ -43,7 +54,7 @@ const groupid = {}
             className="font-bold hover:underline"
             rel="noreferrer"
           >
-            Supabase
+            Pancho
           </a>
         </p>
       </footer>

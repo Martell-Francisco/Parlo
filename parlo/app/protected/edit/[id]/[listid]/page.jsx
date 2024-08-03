@@ -5,6 +5,7 @@ import AuthButton from "@/components/AuthButton";
 import Speak from "@/components/Speak";
 import BackButton from "@/components/backButton";
 import Search from "@/components/search";
+import DeleteItem from "@/components/DeleteItem";
 
 async function getList(id){
 
@@ -51,20 +52,16 @@ return (
         <div className={styles.editModeContainer}>
         <div className={styles.listContainer}>
             {list.map((lists)=>(
-                  <div className={styles.cont} key={lists.id} >
-                    
-                    <div className={styles.editModeListItem}>
+
+                    <div key={lists.id} className={styles.editModeListItem}>
                       <div className={styles.editModeImgIconList}>
                         <img src={lists.items.image}/>
                         <Speak text={lists.items.name}/>
-                        
                       </div>
                       <h1 className={styles.h1}>{lists.items.name}</h1>
-                      
+                      <DeleteItem id={lists.id}/>
                     </div>
-                    </div>
-                    
-                    
+         
             ))}
         </div>
           <div className={styles.editModeSearch}>
@@ -82,7 +79,7 @@ return (
             className="font-bold hover:underline"
             rel="noreferrer"
           >
-            Supabase
+            Friendship
           </a>
         </p>
       </footer>

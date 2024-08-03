@@ -21,6 +21,25 @@
     flex-direction: row;
    
 }
+.formEditMode{
+    display: block ;
+    gap: 10px;
+    text-align: left;
+    margin: 10px;
+    flex-direction: row;
+}
+.formEditMode button{
+    width: 100%;
+    border-radius: 0;
+    background-color:  white;
+    color: grey;
+    border: 1px solid grey;
+    padding: 2px;
+    height: 2rem;
+}
+.formEditMode button:hover{
+    background-color: rgb(201, 201, 202);
+}
 .form input{
     text-align: center;
     border-radius: 0;
@@ -31,7 +50,7 @@
 }
 
 .form button{
-    width: 60px;
+    width: 100%;
     border-radius: 0;
     background-color:  white;
     color: grey;
