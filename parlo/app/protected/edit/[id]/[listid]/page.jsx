@@ -33,8 +33,6 @@ export default async function Groupstuff({params}){
     console.log(list)
 
     console.log("listid: " + params.listid)
-    const text="hello People"
-
 
 return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center">
