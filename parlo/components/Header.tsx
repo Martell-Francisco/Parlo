@@ -1,6 +1,12 @@
 import Image from 'next/image'
-
+import styles from "./component.module.css"
 export default function Header() {
+  const imageStyle ={
+    borderRadius: '10%',
+    width: " 40%",
+    height: "auto"
+
+  }
   return (
     <div className="flex flex-col gap-16 items-center">
       <div className="flex gap-8 justify-center items-center">
@@ -15,6 +21,7 @@ export default function Header() {
         Ease Communication with visual representation 
         </p>
         <Image
+        style={imageStyle}
         src="/landing_Example.png"
         width={500}
         height={500}
@@ -33,6 +40,7 @@ export default function Header() {
         {/* <span className="border-l rotate-45 h-6" /> */}
 
       <Image
+      style={imageStyle}
       src="/landing_Folder.png"
       width={500}
       height={500}
@@ -57,6 +65,7 @@ export default function Header() {
         Add List with board items
       </p>
       <Image
+      style={imageStyle}
       src="/landing_List.png"
       width={500}
       height={500}
